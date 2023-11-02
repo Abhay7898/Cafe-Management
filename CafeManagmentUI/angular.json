@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "CafeManagmentUI": {
+    "Cafe-Management": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/cafe-managment-ui",
+            "outputPath": "dist/cafe-management",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "CafeManagmentUI:build:production"
+              "browserTarget": "Cafe-Management:build:production"
             },
             "development": {
-              "browserTarget": "CafeManagmentUI:build:development"
+              "browserTarget": "Cafe-Management:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "CafeManagmentUI:build"
+            "browserTarget": "Cafe-Management:build"
           }
         },
         "test": {
@@ -96,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": "917cd179-a527-47ff-b11d-7dfcc162a7db"
+    "analytics": "5921038d-e3a4-4bdb-b3e2-da17a72d5cf6"
   }
 }

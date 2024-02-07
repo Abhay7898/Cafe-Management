@@ -15,8 +15,10 @@ import { FooterComponent } from './components/util/footer/footer.component';
 import { HeaderComponent } from './components/util/header/header.component';
 import { SpinnerComponent } from './components/util/spinner/spinner.component';
 import { LoginComponent } from './components/page/login/login.component';
-import { SingupComponent } from './components/page/singup/singup.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SignUpComponent } from './components/page/sign-up/sign-up.component';
+
 
 @NgModule({
   declarations: [
@@ -34,12 +36,13 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     SpinnerComponent,
     LoginComponent,
-    SingupComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
 
   ],
   providers: [],

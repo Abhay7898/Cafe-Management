@@ -7,23 +7,26 @@ import { MenuComponent } from './components/page/menu/menu.component';
 import { ContactComponent } from './components/page/contact/contact.component';
 import { BookingComponent } from './components/page/booking/booking.component';
 import { LoginComponent } from './components/page/login/login.component';
-import { SingupComponent } from './components/page/singup/singup.component';
+import { TestimonialComponent } from './components/page/testimonial/testimonial.component';
+import { TeamComponent } from './components/page/team/team.component';
+import { SignUpComponent } from './components/page/sign-up/sign-up.component';
 
 const routes: Routes = [
+  
   {
     path:'',
+    pathMatch:'full',
+    component:HomeComponent
+  },
+  {
+    path:'login',
     pathMatch:'full',
     component:LoginComponent
   },
   {
-    path:'singup',
+    path:'signUp',
     pathMatch:'full',
-    component:SingupComponent
-  },
-  {
-    path:'home',
-    pathMatch:'full',
-    component:HomeComponent
+    component:SignUpComponent
   },
   {
     path:'about',
@@ -55,7 +58,16 @@ const routes: Routes = [
     pathMatch:'full',
     component:BookingComponent
   },
-
+  {
+    path:'testimonial',
+    pathMatch:'full',
+    component:TestimonialComponent
+  },
+  {
+    path:'team',
+    pathMatch:'full',
+    component:TeamComponent
+  },
 ];
 
 @NgModule({

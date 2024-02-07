@@ -1,0 +1,33 @@
+2024-02-07T13:50:06.929+05:30  WARN 14916 --- [HikariPool-17 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-17 - Thread starvation or clock leap detected (housekeeper delta=15h17m46s816ms281µs200ns).
+2024-02-07T13:52:08.484+05:30  INFO 14916 --- [RMI TCP Connection(106)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-02-07T13:52:08.534+05:30  INFO 14916 --- [RMI TCP Connection(106)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07T13:52:08.547+05:30  INFO 14916 --- [RMI TCP Connection(106)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown initiated...
+2024-02-07T13:52:08.562+05:30  INFO 14916 --- [RMI TCP Connection(106)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown completed.
+2024-02-07T15:22:47.536+05:30  INFO 9208 --- [restartedMain] com.cafe.CafeManagementApplication       : Starting CafeManagementApplication using Java 17.0.6 with PID 9208 (D:\Cafe-Management\CafeManagmentBackend\Cafe_Management\target\classes started by DELL in D:\Cafe-Management\CafeManagmentBackend\Cafe_Management)
+2024-02-07T15:22:47.579+05:30  INFO 9208 --- [restartedMain] com.cafe.CafeManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-02-07T15:22:47.697+05:30  INFO 9208 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-02-07T15:22:47.698+05:30  INFO 9208 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-02-07T15:22:52.776+05:30  INFO 9208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-02-07T15:22:53.033+05:30  INFO 9208 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 235 ms. Found 9 JPA repository interfaces.
+2024-02-07T15:22:54.818+05:30  WARN 9208 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-02-07T15:22:54.897+05:30  INFO 9208 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-02-07T15:22:55.374+05:30  INFO 9208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-02-07T15:22:55.396+05:30  INFO 9208 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-02-07T15:22:55.397+05:30  INFO 9208 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-02-07T15:22:55.467+05:30  INFO 9208 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-02-07T15:22:55.471+05:30  INFO 9208 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7770 ms
+2024-02-07T15:22:55.920+05:30  INFO 9208 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-02-07T15:22:56.105+05:30  INFO 9208 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-02-07T15:22:56.183+05:30  INFO 9208 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-02-07T15:22:56.596+05:30  INFO 9208 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-02-07T15:22:56.726+05:30  INFO 9208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-02-07T15:22:57.009+05:30  INFO 9208 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3e86e1cb
+2024-02-07T15:22:57.012+05:30  INFO 9208 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-02-07T15:22:57.102+05:30  WARN 9208 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-02-07T15:22:57.103+05:30  WARN 9208 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-02-07T15:22:59.446+05:30  INFO 9208 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-02-07T15:22:59.558+05:30  INFO 9208 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-02-07T15:23:00.209+05:30  WARN 9208 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-07T15:23:01.101+05:30  INFO 9208 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-02-07T15:23:01.209+05:30  INFO 9208 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2024-02-07T15:23:01.242+05:30  INFO 9208 --- [restartedMain] com.cafe.CafeManagementApplication       : Started CafeManagementApplication in 15.48 seconds (process running for 18.398)

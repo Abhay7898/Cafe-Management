@@ -7,13 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./booking.component.css']
 })
 export class BookingComponent implements OnInit{
-  userName:any
+  data:any;
+  ngOnInit(): void {
+   this.data = JSON.parse(localStorage.getItem("loginData") || "[]");
+  }
 
   constructor(private router: Router) {
     localStorage.setItem("Login", "false");
-  }
-  ngOnInit(): void {
-    this.userName=localStorage.getItem("userName")
   }
   login() {
     this.router.navigate(['login'])

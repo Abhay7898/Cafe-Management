@@ -34,11 +34,11 @@ public class CategoryServiceImpl implements CategoryService {
 	public Category getCategoryById(int id) {
 		try {
 			return categoryRepositry.findById(id).get();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			log.error(e.getMessage());
 			return null;
 		}
-		
+
 	}
 
 	@Override
@@ -61,12 +61,12 @@ public class CategoryServiceImpl implements CategoryService {
 	}
 
 	@Override
-	public boolean deleteCategoryById(int id){
+	public boolean deleteCategoryById(int id) {
 		try {
 			categoryRepositry.deleteById(id);
 			return categoryRepositry.existsById(id);
 		} catch (Exception e) {
-			log.error(e.getMessage()); 
+			log.error(e.getMessage());
 			return false;
 		}
 	}

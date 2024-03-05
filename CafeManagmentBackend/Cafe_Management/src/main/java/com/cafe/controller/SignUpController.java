@@ -1,5 +1,6 @@
 package com.cafe.controller;
 
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +14,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.cafe.dto.SignUpDTO;
 import com.cafe.model.SignUp;
 import com.cafe.servicesimpl.SignUpServiceImpl;
 import com.cafe.utils.Massage;
@@ -37,39 +41,36 @@ public class SignUpController {
 	@PostMapping("/creatUser")
 	public ResponseEntity<?> createUser(@RequestBody SignUp signUp) {
 		log.info("Create User API Call");
-		Response r = new Response();
-		r.setKey("Msg");
+		
 		SignUp result = signUpServiceImpl.createUser(signUp);
 		if (result != null) {
-			r.setMsg(Massage.SUCCESSFUL);
 			return new ResponseEntity<>(result, HttpStatus.OK);
 		}
-
+		Response r = new Response();
+		r.setKey("Msg");
+		r.setMsg(Massage.USER_NAME_ALREADY_EXIST);
+		return new ResponseEntity<>(r, HttpStatus.CONFLICT);
 		/*
 		 * boolean password = CafeUtils.passwordMatch(signUp.getPassword(),
 		 * signUp.getConfrimPassword()); if (password) {
 		 * signUp.setPassword(this.bCryptPasswordEncoder.encode(signUp.getPassword()));
 		 */
-		r.setMsg(Massage.USER_NAME_ALREADY_EXIST);
-		return new ResponseEntity<>(r, HttpStatus.CONFLICT);
 	}
 
 	@GetMapping("/login")
 	public ResponseEntity<?> loginByUserNameAndPassword(@Param("userName") String userName,
-			@Param("password") String password) {
+			@Param("password") String password) throws CloneNotSupportedException {
 		log.info("Login API Call");
-		Response r = new Response();
-		r.setKey("Msg");
 		// String enPassword = this.bCryptPasswordEncoder.encode(password);
 		SignUp result = signUpServiceImpl.loginUser(userName, password);
 		if (result != null) {
-			r.setMsg(Massage.SUCCESSFUL);
-			r.setUserName(userName);
-			return new ResponseEntity<>(r, HttpStatus.OK);
+			SignUpDTO signUpDTO = (SignUpDTO) result.clone();
+			return new ResponseEntity<>(signUpDTO, HttpStatus.OK);
 		}
+		Response r = new Response();
+		r.setKey("Msg");
 		r.setMsg(Massage.NOT_A_VALID_USER);
 		return new ResponseEntity<>(r, HttpStatus.NOT_FOUND);
-
 	}
 
 	@GetMapping(path = "/getAllUser")
@@ -101,5 +102,15 @@ public class SignUpController {
 		return check ? new ResponseEntity<>(Massage.DATA_DELETED_SUCCESSFULLY, HttpStatus.OK)
 				: new ResponseEntity<>(Massage.NO_DATA_FOUND, HttpStatus.BAD_REQUEST);
 	}
-
+	
+	@PostMapping(path = "/imageUpload/{id}")
+	public void imageUpload(@PathVariable("id") int id, @RequestParam("file") MultipartFile file) {
+		SignUp user = signUpServiceImpl.getUserById(id);
+		try {
+			user.setImage(Base64.getEncoder().encodeToString(file.getBytes()));
+		} catch (Exception e) {
+			log.error(e.getMessage());
+		}
+		signUpServiceImpl.updateUser(user);
+	}
 }

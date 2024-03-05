@@ -1,5 +1,8 @@
 package com.cafe.model;
 
+import java.sql.Blob;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,9 +16,13 @@ import lombok.Setter;
 @Data
 @Getter
 @Setter
-@Table
-public class Home {
+@Table(name = "team")
+public class Member {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int id ;
+	private String memberName;
+	private String designation;
+	@JsonIgnore
+	private Blob memberImage;
 }

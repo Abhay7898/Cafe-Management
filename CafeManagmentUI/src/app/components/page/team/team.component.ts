@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit{
-  userName:any;
+  data:any;
   ngOnInit(): void {
-    this.userName=localStorage.getItem("userName");
+   this.data = JSON.parse(localStorage.getItem("loginData") || "[]");
   }
 
 }

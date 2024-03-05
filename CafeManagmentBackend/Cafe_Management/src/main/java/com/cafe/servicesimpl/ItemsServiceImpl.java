@@ -73,13 +73,12 @@ public class ItemsServiceImpl implements ItemsSevice {
 			try {
 				itemRepositry.deleteById(id);
 				return true;
-			}catch (Exception e) {
+			} catch (Exception e) {
 				log.error(e.getMessage());
 				return false;
 			}
 		}
 		return false;
-
 	}
 
 }

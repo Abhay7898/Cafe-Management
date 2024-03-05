@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { SignUp } from 'src/app/classes/sign-up';
-import { SignUpService } from 'src/app/service/sign-up.service';
+import { SignUpService } from 'src/app/services/sign-up.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
-
+   idvalue : any;
   formData = new FormData();
   files: any;
 
@@ -22,17 +22,36 @@ export class SignUpComponent {
       return;
     }
     
-  this.signUpService.signUp(this.signUp).subscribe((data:any)=>{
+  this.signUpService.assUser(this.signUp).subscribe((data:any)=>{
+    this.signUpService.addImage(data.id,this.formData);
     Swal.fire('Success !!', 'User is added successfuly with user name ' + data.userName, 'success',);
     this.login();
   },
   (error) => {
    Swal.fire('Failed !!', error.error,'error');
   });
+
+  // this.signUpService.signUp(this.signUp).subscribe(
+  //   {
+  //     next: (queryParams) => {
+  //       this.signUpService.addImage(queryParams.constructor.arguments.id,this.formData);
+  //       this.idvalue = queryParams.constructor.arguments.userName;
+  //       alert(queryParams.constructor.arguments.userName);
+  //       console.log(queryParams.constructor.arguments.userName);
+        
+  //     //  Swal.fire('Success !!', 'User is added successfuly with user name ' + queryParams.constructor.arguments.userName, 'success',);
+  //     },
+  //     error: (err: any) => { 
+  //       Swal.fire('Failed !!', err.error,'error');
+  //     },
+  //     complete: () => { 
+  //       Swal.fire('Success !!', 'User is added successfuly with user name ' + this.idvalue, 'success',);
+  //       this.login();
+  //     }
+  //   }
+  // );
+
 }
-
-
-
   public selectFile(event: any) {
     this.formData.append('file', event.target.files[0]);
     this.files = event.target.files[0];
@@ -83,7 +102,7 @@ export class SignUpComponent {
     return true;
   }
 
-
+  
   errorAlreat(msg:any){
     Swal.fire({
       position: 'center',

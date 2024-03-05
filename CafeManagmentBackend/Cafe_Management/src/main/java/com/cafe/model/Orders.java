@@ -14,9 +14,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table
-public class Orders {
+public class Orders{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+	private String modeOfPayment;
+	private String address;
+	private String mobileNumber;
+	private int quantityOfIteams;
 }

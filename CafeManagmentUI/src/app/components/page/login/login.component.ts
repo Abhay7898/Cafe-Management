@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Login } from 'src/app/classes/login';
-import { LoginServiceService } from 'src/app/service/login-service.service';
+import { LoginServiceService } from 'src/app/services/login-service.service';
 import Swal from 'sweetalert2'
 
 @Component({
@@ -24,7 +24,8 @@ export class LoginComponent {
     }
     this.loginService.login(this.userName,this.password).subscribe(
     (data: any) => {
-      localStorage.setItem("userName",data.userName)
+      console.log(JSON.stringify(data));
+      localStorage.setItem("loginData",JSON.stringify(data))
       this.userName=''
       this.password=''
       Swal.fire('Success !!',data.msg, 'success');

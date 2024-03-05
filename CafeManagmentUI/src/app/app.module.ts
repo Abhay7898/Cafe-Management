@@ -18,6 +18,9 @@ import { LoginComponent } from './components/page/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SignUpComponent } from './components/page/sign-up/sign-up.component';
+import { ReadMoreComponent } from './components/page/read-more/read-more.component';
+import { TermsConditionComponent } from './components/page/terms-condition/terms-condition.component';
+import { OrderComponent } from './components/page/order/order.component';
 
 
 @NgModule({
@@ -37,6 +40,9 @@ import { SignUpComponent } from './components/page/sign-up/sign-up.component';
     SpinnerComponent,
     LoginComponent,
     SignUpComponent,
+    ReadMoreComponent,
+    TermsConditionComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,

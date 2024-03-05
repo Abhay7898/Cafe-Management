@@ -6,9 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-  userName:any;
+  data:any;
   ngOnInit(): void {
-    this.userName=localStorage.getItem("userName")
+   this.data = JSON.parse(localStorage.getItem("loginData") || "[]");
   }
-
 }

@@ -7,9 +7,8 @@ import { OnSameUrlNavigation } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  userName:any;
+  data:any;
   ngOnInit(): void {
-   this.userName=localStorage.getItem("userName");
+   this.data = JSON.parse(localStorage.getItem("loginData") || "[]");
   }
-
 }

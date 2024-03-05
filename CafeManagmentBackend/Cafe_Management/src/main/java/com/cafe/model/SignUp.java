@@ -1,13 +1,13 @@
 package com.cafe.model;
 
-import java.sql.Blob;
+import com.cafe.dto.SignUpDTO;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import lombok.Data;
@@ -35,10 +35,21 @@ public class SignUp {
 	private String city;
 	private String address;
 	
-	@JsonIgnore
-	private Blob image;
-	@Transient
-	private boolean isUserLogin;
-	@Transient
-	private boolean isAddminLogin;
+	@Lob
+	@Column(columnDefinition = "MEDIUMBLOB")
+	private String image;
+	private String role;
+	
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		SignUpDTO signUpDTO = new SignUpDTO();
+		signUpDTO.setUserName(this.userName);
+		signUpDTO.setFirstName(this.firstName);
+		if(this.role.equals("NORMAL")) {
+			signUpDTO.setNormalLogin(true);
+		}else {
+			signUpDTO.setAddminLogin(true);
+		}
+		return signUpDTO;
+	}
 }

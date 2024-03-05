@@ -10,6 +10,9 @@ import { LoginComponent } from './components/page/login/login.component';
 import { TestimonialComponent } from './components/page/testimonial/testimonial.component';
 import { TeamComponent } from './components/page/team/team.component';
 import { SignUpComponent } from './components/page/sign-up/sign-up.component';
+import { ReadMoreComponent } from './components/page/read-more/read-more.component';
+import { TermsConditionComponent } from './components/page/terms-condition/terms-condition.component';
+import { OrderComponent } from './components/page/order/order.component';
 
 const routes: Routes = [
   
@@ -68,6 +71,21 @@ const routes: Routes = [
     pathMatch:'full',
     component:TeamComponent
   },
+  {
+    path:'read-more',
+    pathMatch:'full',
+    component:ReadMoreComponent
+  },
+  {
+    path:'terms-condition',
+    pathMatch:'full',
+    component:TermsConditionComponent
+  },
+  {
+    path:'order',
+    pathMatch:'full',
+    component:OrderComponent
+  }
 ];
 
 @NgModule({

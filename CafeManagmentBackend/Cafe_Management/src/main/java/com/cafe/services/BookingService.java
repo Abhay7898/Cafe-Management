@@ -11,7 +11,7 @@ public interface BookingService {
 	
 	public boolean deleteBooking(int id);
 
-	public Booking findBookingByUserNameAndTableNo(String userName, int tableNo);
+	//public Booking findBookingByUserNameAndTableNo(String userName, int tableNo);
 
 	public List<Booking> getAllBooking();
 

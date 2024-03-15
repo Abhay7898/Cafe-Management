@@ -45,12 +45,16 @@ public class BookingController {
 				: new ResponseEntity<>(Massage.NO_DATA_FOUND, HttpStatus.BAD_REQUEST);
 	}
 
-	@GetMapping(path = "/findBooking")
-	public ResponseEntity<?> findBookingByUserNameAndTableNo(@Param("userName") String userName,
-			@Param("tableNo") int tableNo) {
-		Booking check = bookingServiceImpl.findBookingByUserNameAndTableNo(userName, tableNo);
-		return check==null?new ResponseEntity<>(Massage.NO_DATA_FOUND,HttpStatus.BAD_REQUEST):new ResponseEntity<>(check,HttpStatus.OK);
-	}
+	/*
+	 * @GetMapping(path = "/findBooking") public ResponseEntity<?>
+	 * findBookingByUserNameAndTableNo(@Param("userName") String userName,
+	 * 
+	 * @Param("tableNo") int tableNo) { Booking check =
+	 * bookingServiceImpl.findBookingByUserNameAndTableNo(userName, tableNo); return
+	 * check==null?new
+	 * ResponseEntity<>(Massage.NO_DATA_FOUND,HttpStatus.BAD_REQUEST):new
+	 * ResponseEntity<>(check,HttpStatus.OK); }
+	 */
 
 	@GetMapping(path = "/getAllBooking")
 	public ResponseEntity<?> getAllBooking() {

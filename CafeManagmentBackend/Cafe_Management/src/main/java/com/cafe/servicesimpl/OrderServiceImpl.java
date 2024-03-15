@@ -19,14 +19,15 @@ public class OrderServiceImpl implements OrderService {
 	@Autowired
 	public OrdersRepositry ordersRepositry;
 
-	@Autowired
-	private SignUp signUp;
+	/*
+	 * @Autowired private SignUp signUp;
+	 */
 
-	@Override
-	public Orders addOrders(Orders orders) {
-		Orders check = ordersRepositry.getOrderByUserName(signUp.getFirstName());
-		return check==null? null:ordersRepositry.save(orders);
-	}
+	/*
+	 * @Override public Orders addOrders(Orders orders) { Orders check =
+	 * ordersRepositry.getOrderByUserName(signUp.getFirstName()); return
+	 * check==null? null:ordersRepositry.save(orders); }
+	 */
 
 	@Override
 	public List<Orders> getAllOrders() {
@@ -72,9 +73,15 @@ public class OrderServiceImpl implements OrderService {
 		}
 		return  false;
 	}
+	/*
+	 * @Override public Orders getOrderByUserName() { return
+	 * ordersRepositry.getOrderByUserName(signUp.getFirstName()); }
+	 */
+
 	@Override
-	public Orders getOrderByUserName() {
-		return ordersRepositry.getOrderByUserName(signUp.getFirstName());
+	public Orders addOrders(Orders orders) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

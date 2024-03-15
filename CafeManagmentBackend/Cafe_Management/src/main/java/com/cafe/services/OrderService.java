@@ -16,5 +16,5 @@ public interface OrderService {
 	
 	public boolean deleteOrder(int id);
 	
-	public Orders getOrderByUserName();
+	//public Orders getOrderByUserName();
 }

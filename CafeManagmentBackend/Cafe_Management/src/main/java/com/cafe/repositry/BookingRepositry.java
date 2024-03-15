@@ -6,5 +6,5 @@ import com.cafe.model.Booking;
 
 public interface BookingRepositry extends JpaRepository<Booking, Integer>{
 	
-	Booking findBookingByUserNameAndTableNo(String userName, int tableNo);
+	//Booking findBookingByUserNameAndTableNo(String userName, int tableNo);
 }

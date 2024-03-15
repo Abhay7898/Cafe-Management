@@ -37,11 +37,12 @@ public class BookingServiceImpl implements BookingService {
 		return false;
 	}
 
-	@Override
-	public Booking findBookingByUserNameAndTableNo(String userName, int tableNo) {
-		Booking booking = bookingRepositry.findBookingByUserNameAndTableNo(userName, tableNo);
-		return booking == null ? null : booking;
-	}
+	/*
+	 * @Override public Booking findBookingByUserNameAndTableNo(String userName, int
+	 * tableNo) { Booking booking =
+	 * bookingRepositry.findBookingByUserNameAndTableNo(userName, tableNo); return
+	 * booking == null ? null : booking; }
+	 */
 
 	@Override
 	public List<Booking> getAllBooking() {

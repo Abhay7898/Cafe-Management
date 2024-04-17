@@ -99,6 +99,9 @@ export class SignUpComponent {
       this.errorAlreat('Please Enter Address..!!')
       return false;
     }
+    if(this.signUp.image==null||this.signUp.image.trim==''){
+      this.errorAlreat('Please select Image..!!')
+    }
     return true;
   }
 

@@ -11,6 +11,7 @@ import com.cafe.model.SignUp;
 import com.cafe.repositry.SignUpRepositry;
 import com.cafe.services.SignUpService;
 import lombok.extern.slf4j.Slf4j;
+
 @Slf4j
 @Service
 public class SignUpServiceImpl implements SignUpService {
@@ -49,7 +50,7 @@ public class SignUpServiceImpl implements SignUpService {
 	public SignUp getUserById(int id) {
 		try {
 			return signUpRepositry.findById(id).get();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			log.error(e.getMessage());
 			return null;
 		}
@@ -57,9 +58,9 @@ public class SignUpServiceImpl implements SignUpService {
 
 	@Override
 	public boolean updateUser(SignUp signUp) {
-		Optional<SignUp> check=signUpRepositry.findById(signUp.getId());
-		if(check.isPresent()) {
-			SignUp old=check.get();
+		Optional<SignUp> check = signUpRepositry.findById(signUp.getId());
+		if (check.isPresent()) {
+			SignUp old = check.get();
 			old.setId(signUp.getId());
 			old.setUserName(signUp.getUserName());
 			old.setPassword(signUp.getPassword());
@@ -73,7 +74,7 @@ public class SignUpServiceImpl implements SignUpService {
 			try {
 				signUpRepositry.save(old);
 				return true;
-			}catch (Exception e) {
+			} catch (Exception e) {
 				log.error(e.getMessage());
 				return false;
 			}
@@ -83,11 +84,11 @@ public class SignUpServiceImpl implements SignUpService {
 
 	@Override
 	public boolean deleteUserById(int id) {
-		if(signUpRepositry.existsById(id)) {
+		if (signUpRepositry.existsById(id)) {
 			try {
 				signUpRepositry.deleteById(id);
 				return true;
-			}catch (Exception e) {
+			} catch (Exception e) {
 				log.error(e.getMessage());
 				return false;
 			}

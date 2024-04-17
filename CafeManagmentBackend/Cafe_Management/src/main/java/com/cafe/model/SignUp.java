@@ -38,7 +38,7 @@ public class SignUp {
 	@Lob
 	@Column(columnDefinition = "MEDIUMBLOB")
 	private String image;
-	private String role;
+	private String role="NORMAL";
 	
 	@Override
 	public Object clone() throws CloneNotSupportedException {

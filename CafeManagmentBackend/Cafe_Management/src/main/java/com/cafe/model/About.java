@@ -27,5 +27,4 @@ public class About {
 	private String content;
 	@Lob
 	private String displayImages;
-	
 }

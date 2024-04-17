@@ -11,8 +11,9 @@ public class SignUpDTO {
 
 	private int id;
 	private String userName;
-	//private String password;
 	private String firstName;
+	private boolean isNormalLogin = false;
+	private boolean isAddminLogin = false;
 	/*
 	 * private String lastName; private String mobileNumber; private String emailId;
 	 * private String city; private String address;
@@ -20,8 +21,5 @@ public class SignUpDTO {
 	 * @Lob private String image;
 	 */
 	//private String role;
-	
-	private boolean isNormalLogin = false;
-	private boolean isAddminLogin = false;
-
+	//private String password;
 }

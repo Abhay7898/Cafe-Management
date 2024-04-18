@@ -41,8 +41,9 @@ public class SignUpController {
 	@PostMapping("/creatUser")
 	public ResponseEntity<?> createUser(@RequestBody SignUp signUp) {
 		log.info("Create User API Call");
-		
+
 		SignUp result = signUpServiceImpl.createUser(signUp);
+
 		if (result != null) {
 			return new ResponseEntity<>(result, HttpStatus.OK);
 		}
@@ -102,7 +103,7 @@ public class SignUpController {
 		return check ? new ResponseEntity<>(Massage.DATA_DELETED_SUCCESSFULLY, HttpStatus.OK)
 				: new ResponseEntity<>(Massage.NO_DATA_FOUND, HttpStatus.BAD_REQUEST);
 	}
-	
+
 	@PostMapping(path = "/imageUpload/{id}")
 	public void imageUpload(@PathVariable("id") int id, @RequestParam("file") MultipartFile file) {
 		SignUp user = signUpServiceImpl.getUserById(id);

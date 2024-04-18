@@ -21,6 +21,7 @@ import { SignUpComponent } from './components/page/sign-up/sign-up.component';
 import { ReadMoreComponent } from './components/page/read-more/read-more.component';
 import { TermsConditionComponent } from './components/page/terms-condition/terms-condition.component';
 import { OrderComponent } from './components/page/order/order.component';
+import { DashboardComponent } from './components/ADMIN/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { OrderComponent } from './components/page/order/order.component';
     ReadMoreComponent,
     TermsConditionComponent,
     OrderComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

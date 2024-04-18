@@ -100,7 +100,8 @@ export class SignUpComponent {
       return false;
     }
     if(this.signUp.image==null||this.signUp.image.trim==''){
-      this.errorAlreat('Please select Image..!!')
+      this.errorAlreat("Please Select Image..!!")
+      return false;
     }
     return true;
   }

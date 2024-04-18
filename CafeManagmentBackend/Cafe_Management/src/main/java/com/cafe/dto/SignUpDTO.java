@@ -12,7 +12,6 @@ public class SignUpDTO {
 	private int id;
 	private String userName;
 	private String firstName;
-	private boolean isNormalLogin = false;
 	private boolean isAddminLogin = false;
 	/*
 	 * private String lastName; private String mobileNumber; private String emailId;

@@ -45,9 +45,7 @@ public class SignUp {
 		SignUpDTO signUpDTO = new SignUpDTO();
 		signUpDTO.setUserName(this.userName);
 		signUpDTO.setFirstName(this.firstName);
-		if(this.role.equals("NORMAL")) {
-			signUpDTO.setNormalLogin(true);
-		}else {
+		if(this.role.equals("ADMIN")) {
 			signUpDTO.setAddminLogin(true);
 		}
 		return signUpDTO;

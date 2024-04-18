@@ -24,8 +24,13 @@ public class SignUpServiceImpl implements SignUpService {
 
 	@Override
 	public SignUp createUser(SignUp singUp) {
-		List<SignUp> list = signUpRepositry.findUserByUserName(singUp.getUserName());
-		return list.isEmpty() ? signUpRepositry.save(singUp) : null;
+		List<SignUp> list=null;
+		try {
+			list= signUpRepositry.findUserByUserName(singUp.getUserName());	
+		}catch (Exception e) {
+			log.error(e.getMessage());
+		}
+		return list==null||list.isEmpty() ? signUpRepositry.save(singUp) : null;
 	}
 
 	@Override

@@ -33,6 +33,5 @@ export class SignUpService {
 
   deleteUser(id:any):Observable<Object>{
     return this,this.http.delete(`${this.url+'deleteUser/'+id}`)
-  }
-  
+  } 
 }

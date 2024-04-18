@@ -14,7 +14,15 @@ export class LoginComponent {
   userName:any;
   password:any;
 
-  constructor (private loginService:LoginServiceService, private router:Router){}
+  constructor (private loginService:LoginServiceService, private router:Router){
+    localStorage.setItem("Home","false");
+    localStorage.setItem("About","false");
+    localStorage.setItem("Service","false");
+    localStorage.setItem("Menu","false");
+    localStorage.setItem("Contact","false");
+    localStorage.setItem("DeshBoard","false");
+    localStorage.setItem("SignUp","false");
+  }
   
 
   onSubmit(){
@@ -28,14 +36,14 @@ export class LoginComponent {
       localStorage.setItem("loginData",JSON.stringify(data))
       this.userName=''
       this.password=''
+      localStorage.setItem("isAddminLogin", data.isAddminLogin);
       Swal.fire('Success !!',data.msg, 'success');
       this.booking();
     },
     (error) => {
       Swal.fire('Failed !!', error.error, 'error');
       console.log(error.error)
-    });
-    
+    }); 
 }
 
   validation():boolean{
@@ -61,6 +69,6 @@ export class LoginComponent {
   }
   
   booking(){
-    this.router.navigate(['booking'])
+    this.router.navigate(['booking']);
   }
 }

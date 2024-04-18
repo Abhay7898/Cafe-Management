@@ -11,6 +11,9 @@ export class FooterComponent {
 
   }
 signUp(){
-  this.router.navigate(['signUp'])
+  this.router.navigate(['signUp']);
+}
+deshboard(){
+    this.router.navigate(['deshboard']);
 }
 }

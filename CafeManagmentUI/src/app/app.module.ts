@@ -14,14 +14,17 @@ import { NavbarComponent } from './components/util/navbar/navbar.component';
 import { FooterComponent } from './components/util/footer/footer.component';
 import { HeaderComponent } from './components/util/header/header.component';
 import { SpinnerComponent } from './components/util/spinner/spinner.component';
-import { LoginComponent } from './components/page/login/login.component';
+import { LoginComponent } from './components/page/login/LoginComponent';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SignUpComponent } from './components/page/sign-up/sign-up.component';
 import { ReadMoreComponent } from './components/page/read-more/read-more.component';
 import { TermsConditionComponent } from './components/page/terms-condition/terms-condition.component';
 import { OrderComponent } from './components/page/order/order.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DashboardComponent } from './components/ADMIN/dashboard/dashboard.component';
+import { SidebarComponent } from './components/ADMIN/sidebar/sidebar.component';
+import { OrderviewComponent } from './components/ADMIN/orderview/orderview.component';
 
 
 @NgModule({
@@ -45,12 +48,15 @@ import { DashboardComponent } from './components/ADMIN/dashboard/dashboard.compo
     TermsConditionComponent,
     OrderComponent,
     DashboardComponent,
+    SidebarComponent,
+    OrderviewComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    FontAwesomeModule,
 
   ],
   providers: [],

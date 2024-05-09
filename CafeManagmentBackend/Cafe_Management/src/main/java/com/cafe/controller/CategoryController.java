@@ -70,7 +70,7 @@ public class CategoryController {
 	public ResponseEntity<?> deleteCategoryById(@PathVariable int id) {
 		log.info("Delete Category API Call");
 		boolean check = categoryServiceImpl.deleteCategoryById(id);
-		return !check ? new ResponseEntity<>(Massage.DATA_DELETED_SUCCESSFULLY, HttpStatus.OK)
+		return check ? new ResponseEntity<>(Massage.DATA_DELETED_SUCCESSFULLY, HttpStatus.OK)
 				: new ResponseEntity<>(Massage.NO_DATA_FOUND, HttpStatus.BAD_REQUEST);
 	}
 }

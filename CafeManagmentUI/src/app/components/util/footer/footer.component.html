@@ -32,9 +32,7 @@
                 <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Newsletter</h4>
                 <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
                 <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <button type="button" class="btn btn-primary py-2 px-4" (click)="this.signUp()">SignUp</button> 
-                    &nbsp;   
-                    <button type="button" class="btn btn-primary py-2 px-4" (click)="this.deshboard()">DeshBoard</button> 
+                    <button type="button" class="btn btn-primary py-2 px-4" *ngIf="isDeshboard" (click)="this.deshboard()">DeshBoard</button> 
                 </div>
             </div>
         </div>

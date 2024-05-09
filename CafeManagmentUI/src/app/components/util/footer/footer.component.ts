@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,14 +6,17 @@ import { Router } from '@angular/router';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit{
+   isDeshboard=false;
+  
   constructor(private router:Router){
-
+  } 
+  ngOnInit(): void {
+    if(localStorage.getItem("isAdmin")=="true"){
+      this.isDeshboard=true;
+    }
   }
-signUp(){
-  this.router.navigate(['signUp']);
-}
 deshboard(){
-    this.router.navigate(['deshboard']);
+    this.router.navigate(['dashboard']);
 }
 }

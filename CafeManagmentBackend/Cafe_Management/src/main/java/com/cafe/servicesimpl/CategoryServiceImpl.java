@@ -62,13 +62,15 @@ public class CategoryServiceImpl implements CategoryService {
 
 	@Override
 	public boolean deleteCategoryById(int id) {
-		try {
-			categoryRepositry.deleteById(id);
-			return categoryRepositry.existsById(id);
-		} catch (Exception e) {
-			log.error(e.getMessage());
-			return false;
+		if (categoryRepositry.existsById(id)) {
+			try {
+				categoryRepositry.deleteById(id);
+				return true;
+			} catch (Exception e) {
+				log.error(e.getMessage());
+				return false;
+			}
 		}
+		return false;
 	}
-
 }

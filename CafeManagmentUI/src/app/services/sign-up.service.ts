@@ -12,11 +12,11 @@ export class SignUpService {
 
   constructor(private http:HttpClient) { }
   
-  assUser(signUp:SignUp):Observable<Object>{
+  addUser(signUp:SignUp):Observable<Object>{
     return this.http.post(`${this.url+'creatUser'}`,signUp)
   }
   addImage(id:any,formData:any){
-    return this.http.post(`${this.url+`/imageUpload/`+id}`,formData);
+    return this.http.post(`${this.url+`imageUpload/`+id}`,formData);
   }
 
   getAllUser():Observable<SignUp[]>{

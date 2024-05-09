@@ -1,4 +1,10 @@
+import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { Menu } from 'src/app/classes/menu';
+import { MenuService } from 'src/app/services/menu.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menu',
@@ -6,9 +12,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit{
-  data:any;
-  ngOnInit(): void {
-   this.data = JSON.parse(localStorage.getItem("loginData") || "[]");
+  user:any;
+  imageSource:any;
+  allItems:any=[];
+  public constructor(private menuService:MenuService,private router:Router,private sanitizer:DomSanitizer){
   }
 
+  ngOnInit(): void {
+   this.user = JSON.parse(localStorage.getItem("loginData") || "[]");
+  this.getAllItems();
+  }
+
+  public getAllItems() {
+    this.menuService.getAllItem().subscribe((data: any) => {
+      this.allItems = data;
+      this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/png;base64, ${data.get.image}`);
+    },
+      (error) => {
+          Swal.fire('Failed !!', error.error.msg, 'error');
+          console.log(error.error);
+      })
+  }
 }

@@ -4,10 +4,12 @@ import java.sql.Blob;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.Getter;
@@ -25,7 +27,8 @@ public class Items {
 	private String name;
 	private String description;
 	private double price;
-	@JsonIgnore
-	private Blob image;
+	@Lob
+	@Column(columnDefinition ="MEDIUMBLOB")
+	private String image;
 	private int categoryId; 
 }

@@ -6,7 +6,7 @@ import { ServiceComponent } from './components/page/service/service.component';
 import { MenuComponent } from './components/page/menu/menu.component';
 import { ContactComponent } from './components/page/contact/contact.component';
 import { BookingComponent } from './components/page/booking/booking.component';
-import { LoginComponent } from './components/page/login/login.component';
+import { LoginComponent } from './components/page/login/LoginComponent';
 import { TestimonialComponent } from './components/page/testimonial/testimonial.component';
 import { TeamComponent } from './components/page/team/team.component';
 import { SignUpComponent } from './components/page/sign-up/sign-up.component';
@@ -14,6 +14,7 @@ import { ReadMoreComponent } from './components/page/read-more/read-more.compone
 import { TermsConditionComponent } from './components/page/terms-condition/terms-condition.component';
 import { OrderComponent } from './components/page/order/order.component';
 import { DashboardComponent } from './components/ADMIN/dashboard/dashboard.component';
+import { FooterComponent } from './components/util/footer/footer.component';
 
 const routes: Routes = [
   
@@ -88,10 +89,15 @@ const routes: Routes = [
     component:OrderComponent
   },
   {
-    path:'deshboard',
+    path:'dashboard',
     pathMatch:'full',
     component:DashboardComponent
-  }
+  },
+  {
+    path:'footer',
+    pathMatch:'full',
+    component:FooterComponent
+  },
 ];
 
 @NgModule({

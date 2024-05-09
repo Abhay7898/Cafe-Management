@@ -1,5 +1,6 @@
 package com.cafe.controller;
 
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +13,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.cafe.model.Items;
+import com.cafe.model.SignUp;
 import com.cafe.servicesimpl.ItemsServiceImpl;
 import com.cafe.utils.Massage;
 import com.cafe.utils.Response;
 
+import jakarta.websocket.server.PathParam;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -55,7 +60,7 @@ public class ItemsController {
 	public ResponseEntity<?> getAllItemsByCategory(@PathVariable int categoryId) {
 		log.info("Get All Items Api Call");
 		List<Items> check = itemsServiceImpl.getAllItemsByCategory(categoryId);
-		return check.isEmpty()? new ResponseEntity<>(Massage.NO_DATA_FOUND, HttpStatus.BAD_REQUEST)
+		return check.isEmpty() ? new ResponseEntity<>(Massage.NO_DATA_FOUND, HttpStatus.BAD_REQUEST)
 				: new ResponseEntity<>(check, HttpStatus.OK);
 	}
 
@@ -81,5 +86,17 @@ public class ItemsController {
 		boolean check = itemsServiceImpl.deleteItemsById(id);
 		return check ? new ResponseEntity<>(Massage.DATA_DELETED_SUCCESSFULLY, HttpStatus.OK)
 				: new ResponseEntity<>(Massage.NO_DATA_FOUND, HttpStatus.BAD_REQUEST);
+	}
+	
+	@PostMapping(path = "/imageUploaded/{id}")
+	public void imageUploaded(@PathVariable ("id")int id,@RequestParam ("file")MultipartFile file) {
+		Items items = itemsServiceImpl.getItemsById(id);
+		try {
+			items.setImage(Base64.getEncoder().encodeToString(file.getBytes()));
+		}catch (Exception e) {
+			log.error(e.getMessage());
+		}
+		itemsServiceImpl.updateItems(items);
+		
 	}
 }

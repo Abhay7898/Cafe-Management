@@ -8,7 +8,18 @@ import { OnSameUrlNavigation } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   data:any;
+  isCheck=false;
+  isLogin=true;
+  public constructor(){
+   
+  }
   ngOnInit(): void {
    this.data = JSON.parse(localStorage.getItem("loginData") || "[]");
+
+   if(localStorage.getItem("isLogin")=="true"){
+    this.isLogin=true;
+  }else{
+    this.isLogin = false;
+  }
   }
 }

@@ -1,25 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { window, windowCount } from 'rxjs';
 import Swal from 'sweetalert2';
 
+
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css']
 })
-export class NavbarComponent implements OnInit{
+export class SidebarComponent {
   isBooking=false;
   isLogin=true;
   isDeshboard=false;
   isLogout=false;
   isSignup=true;
-  public constructor(private router:Router){
-   this.isBooking=false;
+  constructor(private router:Router){ 
   this.isLogin=true;
   this.isDeshboard=false;
   this.isLogout=false;
   this.isSignup=true;
   }
+  
+  
   ngOnInit(): void {
     if(localStorage.getItem("isAdmin")=="true"){
       this.isDeshboard=true;
@@ -44,8 +47,7 @@ export class NavbarComponent implements OnInit{
       timer: 1000
     });
     this.router.navigate(['/']);
+    
   }
-  signUp(){
-    this.router.navigate(['signUp']);
-  }
+
 }

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { SignUp } from 'src/app/classes/sign-up';
 import { SignUpService } from 'src/app/services/sign-up.service';
 import Swal from 'sweetalert2';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-sign-up',
@@ -15,6 +17,7 @@ export class SignUpComponent {
   files: any;
 
   signUp: SignUp = new SignUp();
+ 
   constructor(private signUpService: SignUpService, private router: Router) { }
 
   onSubmit() {
@@ -22,41 +25,29 @@ export class SignUpComponent {
       return;
     }
     
-  this.signUpService.assUser(this.signUp).subscribe((data:any)=>{
-    this.signUpService.addImage(data.id,this.formData);
-    Swal.fire('Success !!', 'User is added successfuly with user name ' + data.userName, 'success',);
-    this.login();
+  this.signUpService.addUser(this.signUp).subscribe((data:any)=>{
+    this.uploadImage(data.id,data);
   },
   (error) => {
-   Swal.fire('Failed !!', error.error,'error');
+   Swal.fire('Failed !!', error.error.msg,'error');
   });
-
-  // this.signUpService.signUp(this.signUp).subscribe(
-  //   {
-  //     next: (queryParams) => {
-  //       this.signUpService.addImage(queryParams.constructor.arguments.id,this.formData);
-  //       this.idvalue = queryParams.constructor.arguments.userName;
-  //       alert(queryParams.constructor.arguments.userName);
-  //       console.log(queryParams.constructor.arguments.userName);
-        
-  //     //  Swal.fire('Success !!', 'User is added successfuly with user name ' + queryParams.constructor.arguments.userName, 'success',);
-  //     },
-  //     error: (err: any) => { 
-  //       Swal.fire('Failed !!', err.error,'error');
-  //     },
-  //     complete: () => { 
-  //       Swal.fire('Success !!', 'User is added successfuly with user name ' + this.idvalue, 'success',);
-  //       this.login();
-  //     }
-  //   }
-  // );
-
 }
   public selectFile(event: any) {
     this.formData.append('file', event.target.files[0]);
     this.files = event.target.files[0];
   }
 
+  public uploadImage(userId: any, data: any) {
+    this.signUpService.addImage(userId, this.formData).subscribe((data1: any) => {
+      Swal.fire('Success !!', 'User is added successfuly with user name ' + '<b>'+data.userName+'</b>','success',);
+      this.login();
+    },
+      (error) => {
+        console.log(error);
+      }
+    );
+
+  }
 
   vlaidation():boolean{
     if(this.signUp.userName==null||this.signUp.userName.trim==''){
@@ -99,14 +90,22 @@ export class SignUpComponent {
       this.errorAlreat('Please Enter Address..!!')
       return false;
     }
-    if(this.signUp.image==null||this.signUp.image.trim==''){
+    if(this.files==null||this.files==''){
       this.errorAlreat("Please Select Image..!!")
       return false;
     }
-    return true;
-  }
+    var ext = this.files.name.substring(this.files.name.lastIndexOf('.') + 1);
+    if (ext.toLowerCase() != 'png' && ext.toLowerCase() != 'jpg') {
+      this.errorAlreat("Selected file format is not supported..!!")
+      return false;
+    }
 
-  
+    if (this.files.size > 2000000) {
+      this.errorAlreat("Selected Image < 2 MB")
+      return false ;
+    }
+    return true;
+  }  
   errorAlreat(msg:any){
     Swal.fire({
       position: 'center',
@@ -116,7 +115,7 @@ export class SignUpComponent {
       showConfirmButton: false,
     })
   }
-
+  
   login(){
     this.router.navigate(['login'])
   }

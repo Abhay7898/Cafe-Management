@@ -1,7 +1,10 @@
 package com.cafe.controller;
 
 import java.util.Base64;
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,12 +21,10 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.cafe.model.Items;
-import com.cafe.model.SignUp;
 import com.cafe.servicesimpl.ItemsServiceImpl;
 import com.cafe.utils.Massage;
 import com.cafe.utils.Response;
 
-import jakarta.websocket.server.PathParam;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -52,6 +53,12 @@ public class ItemsController {
 	public ResponseEntity<?> getAllItems() {
 		log.info("Get All Items API Call");
 		List<Items> check = itemsServiceImpl.getAllItems();
+		check = check.stream().sorted(Comparator.comparingInt(Items :: getId)).collect(Collectors.toList());;
+		int i = 0;
+		for(Items it : check) {
+			it.setId(i);
+			i++;
+		}
 		return check.isEmpty() ? new ResponseEntity<>(Massage.NO_DATA_FOUND, HttpStatus.BAD_REQUEST)
 				: new ResponseEntity<>(check, HttpStatus.OK);
 	}

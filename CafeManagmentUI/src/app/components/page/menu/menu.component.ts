@@ -13,8 +13,9 @@ import Swal from 'sweetalert2';
 })
 export class MenuComponent implements OnInit{
   user:any;
-  imageSource:any;
+  imageSource:any = [];
   allItems:any=[];
+  i : any = 0;
   public constructor(private menuService:MenuService,private router:Router,private sanitizer:DomSanitizer){
   }
 
@@ -26,7 +27,11 @@ export class MenuComponent implements OnInit{
   public getAllItems() {
     this.menuService.getAllItem().subscribe((data: any) => {
       this.allItems = data;
-      this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/png;base64, ${data.get.image}`);
+      for (var i = 0; i < this.allItems.length; i++) {
+        this.imageSource[i] =this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/png;base64, ${this.allItems[i].image}`);    
+  }     
+     // console.log(this.imageSource);
+     i++;
     },
       (error) => {
           Swal.fire('Failed !!', error.error.msg, 'error');

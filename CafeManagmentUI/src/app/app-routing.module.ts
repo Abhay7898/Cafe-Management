@@ -15,6 +15,7 @@ import { TermsConditionComponent } from './components/page/terms-condition/terms
 import { OrderComponent } from './components/page/order/order.component';
 import { DashboardComponent } from './components/ADMIN/dashboard/dashboard.component';
 import { FooterComponent } from './components/util/footer/footer.component';
+import { OrderviewComponent } from './components/ADMIN/orderview/orderview.component';
 
 const routes: Routes = [
   

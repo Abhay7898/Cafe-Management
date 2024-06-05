@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { window, windowCount } from 'rxjs';
+
 import Swal from 'sweetalert2';
 
 
@@ -46,8 +46,6 @@ export class SidebarComponent {
       showConfirmButton: false,
       timer: 1000
     });
-    this.router.navigate(['/']);
-    
+    this.router.navigate(['/']); 
   }
-
 }

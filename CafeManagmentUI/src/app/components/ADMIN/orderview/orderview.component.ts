@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./orderview.component.css']
 })
 export class OrderviewComponent {
-
-
+  logout(){
+    
+  }
 }
-

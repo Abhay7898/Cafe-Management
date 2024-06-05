@@ -25,6 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DashboardComponent } from './components/ADMIN/dashboard/dashboard.component';
 import { SidebarComponent } from './components/ADMIN/sidebar/sidebar.component';
 import { OrderviewComponent } from './components/ADMIN/orderview/orderview.component';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { OrderviewComponent } from './components/ADMIN/orderview/orderview.compo
     FormsModule,
     HttpClientModule,
     FontAwesomeModule,
+    MatIconModule
 
   ],
   providers: [],

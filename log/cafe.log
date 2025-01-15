@@ -1,0 +1,67 @@
+2025-01-15T21:01:16.177+05:30  INFO 7368 --- [restartedMain] com.cafe.CafeManagementApplication       : Starting CafeManagementApplication using Java 17.0.6 with PID 7368 (D:\Project\Cafe-Management\CafeManagmentBackend\Cafe_Management\target\classes started by abhay in D:\Project\Cafe-Management\CafeManagmentBackend\Cafe_Management)
+2025-01-15T21:01:16.180+05:30  INFO 7368 --- [restartedMain] com.cafe.CafeManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T21:01:16.237+05:30  INFO 7368 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-15T21:01:16.238+05:30  INFO 7368 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-15T21:01:16.952+05:30  INFO 7368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T21:01:17.061+05:30  INFO 7368 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 9 JPA repository interfaces.
+2025-01-15T21:01:17.371+05:30  WARN 7368 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-01-15T21:01:17.462+05:30  INFO 7368 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-01-15T21:01:17.732+05:30  INFO 7368 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T21:01:17.746+05:30  INFO 7368 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T21:01:17.746+05:30  INFO 7368 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-01-15T21:01:17.815+05:30  INFO 7368 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-15T21:01:17.816+05:30  INFO 7368 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1576 ms
+2025-01-15T21:01:18.027+05:30  INFO 7368 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T21:01:18.087+05:30  INFO 7368 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-01-15T21:01:18.131+05:30  INFO 7368 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T21:01:18.350+05:30  INFO 7368 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T21:01:18.382+05:30  INFO 7368 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-15T21:01:18.540+05:30  INFO 7368 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7c60e899
+2025-01-15T21:01:18.544+05:30  INFO 7368 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-15T21:01:18.593+05:30  WARN 7368 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-15T21:01:18.595+05:30  WARN 7368 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-15T21:01:19.421+05:30  INFO 7368 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15T21:01:19.478+05:30  INFO 7368 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T21:01:19.923+05:30  WARN 7368 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-15T21:01:20.339+05:30  INFO 7368 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-15T21:01:20.394+05:30  INFO 7368 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-01-15T21:01:20.405+05:30  INFO 7368 --- [restartedMain] com.cafe.CafeManagementApplication       : Started CafeManagementApplication in 4.797 seconds (process running for 5.728)
+2025-01-15T22:43:05.546+05:30  WARN 7368 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h30m46s695ms260µs500ns).
+2025-01-15T23:29:22.882+05:30  WARN 7368 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46m17s357ms140µs600ns).
+2025-01-15T23:33:14.616+05:30  INFO 7368 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-15T23:33:14.616+05:30  INFO 7368 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-15T23:33:14.803+05:30  INFO 7368 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 180 ms
+2025-01-15T23:33:15.357+05:30  INFO 7368 --- [http-nio-8080-exec-1] com.cafe.controller.ItemsController      : Get All Items API Call
+2025-01-15T23:33:30.706+05:30  INFO 7368 --- [http-nio-8080-exec-2] com.cafe.controller.SignUpController     : Login API Call
+2025-01-15T23:38:40.424+05:30  INFO 7368 --- [RMI TCP Connection(34)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-01-15T23:38:40.455+05:30  INFO 7368 --- [RMI TCP Connection(34)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T23:38:40.470+05:30  INFO 7368 --- [RMI TCP Connection(34)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-01-15T23:38:40.478+05:30  INFO 7368 --- [RMI TCP Connection(34)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-01-15T23:40:02.144+05:30  INFO 2196 --- [restartedMain] com.cafe.CafeManagementApplication       : Starting CafeManagementApplication using Java 17.0.6 with PID 2196 (D:\Project\Cafe-Management\CafeManagmentBackend\Cafe_Management\target\classes started by abhay in D:\Project\Cafe-Management\CafeManagmentBackend\Cafe_Management)
+2025-01-15T23:40:02.147+05:30  INFO 2196 --- [restartedMain] com.cafe.CafeManagementApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-01-15T23:40:02.232+05:30  INFO 2196 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-01-15T23:40:02.233+05:30  INFO 2196 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-01-15T23:40:03.279+05:30  INFO 2196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-15T23:40:03.426+05:30  INFO 2196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 9 JPA repository interfaces.
+2025-01-15T23:40:03.821+05:30  WARN 2196 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2025-01-15T23:40:03.901+05:30  INFO 2196 --- [restartedMain] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-01-15T23:40:04.307+05:30  INFO 2196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-15T23:40:04.325+05:30  INFO 2196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-15T23:40:04.326+05:30  INFO 2196 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.17]
+2025-01-15T23:40:04.400+05:30  INFO 2196 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-15T23:40:04.401+05:30  INFO 2196 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2166 ms
+2025-01-15T23:40:04.648+05:30  INFO 2196 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-15T23:40:04.750+05:30  INFO 2196 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2025-01-15T23:40:04.807+05:30  INFO 2196 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-15T23:40:05.139+05:30  INFO 2196 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-15T23:40:05.181+05:30  INFO 2196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-15T23:40:05.393+05:30  INFO 2196 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6b0cac70
+2025-01-15T23:40:05.397+05:30  INFO 2196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-15T23:40:05.481+05:30  WARN 2196 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-15T23:40:05.482+05:30  WARN 2196 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-01-15T23:40:06.694+05:30  INFO 2196 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-15T23:40:06.794+05:30  INFO 2196 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-15T23:40:07.450+05:30  WARN 2196 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-15T23:40:08.043+05:30  INFO 2196 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-01-15T23:40:08.126+05:30  INFO 2196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-01-15T23:40:08.143+05:30  INFO 2196 --- [restartedMain] com.cafe.CafeManagementApplication       : Started CafeManagementApplication in 6.595 seconds (process running for 8.208)

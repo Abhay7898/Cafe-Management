@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Header start-->
+
+<!--Header End-->
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <!--nav bar-->
+            <app-navbar></app-navbar>
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Welcome To Login</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <!-- Reservation Start -->
+        <div data-wow-delay="0.1s">
+
+            <div class="col-md-15 bg-dark d-flex align-items-center">
+                <div class="p-5 wow fadeInUp " data-wow-delay="0.2s">
+                    <h5 class="section-title ff-secondary text-start text-primary fw-normal">User</h5>
+                    <h1 class="text-white mb-4">Details For Login</h1>
+                    <form (ngSubmit)="onSubmit()">
+                        <div class="row g-3">
+                            <div class="col-md-6 align-items-center">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name"
+                                        [(ngModel)]='userName' [ngModelOptions]="{standalone: true}">
+                                    <label for="name">Enter UserName</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 align-items-center">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email"
+                                        [(ngModel)]='password' [ngModelOptions]="{standalone: true}">
+                                    <label for="email">Enter Password</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 16:9 aspect ratio -->
+                        <div class="ratio ratio-16x9">
+                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen
+                                allowscriptaccess="always" allow="autoplay"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Reservation Start -->
+
+
+        <!-- Footer Start -->
+    </div>
+
+
+</body>
+
+</html>

@@ -38,10 +38,12 @@ public class BookingServiceImpl implements BookingService {
 	}
 
 	/*
+	 * 
 	 * @Override public Booking findBookingByUserNameAndTableNo(String userName, int
 	 * tableNo) { Booking booking =
 	 * bookingRepositry.findBookingByUserNameAndTableNo(userName, tableNo); return
 	 * booking == null ? null : booking; }
+	 * 
 	 */
 
 	@Override
